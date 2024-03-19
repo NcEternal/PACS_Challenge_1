@@ -8,7 +8,7 @@ Run from the command line `./minimize -h` to print a list of options.
 
 ## Parser Functions ##
 
-The functions already in the `functions/` folder to be used with the parser are:
+The functions already in the `functions/` folder ready to be used with the parser are:
 
 * `base_function.txt`: $xy + 4x^2 + y^2 + 3x$;
 
