@@ -1,0 +1,18 @@
+#Start point
+x0='-1. 0.'
+#Tolerance on step length
+step_tol=1e-6
+#Tolerance on gradient norm
+res_tol=1e-9
+#Step
+step=0.5
+#Parameter for Armijio Rule / Exponential Decay of the step / Inverse Decay of the step
+step_decay=0.05
+#Maximum number of iterations
+max_iter=500
+#Algorithm for minimization (1: ADAM, Anything else: Gradient Descent)
+algorithm=0
+#Step Strategy (0: Line Search, 1: Exponential Decay, 2: Inverse Decay)
+strategy=1
+#Step for numerical approximation of gradient
+h=0.01 

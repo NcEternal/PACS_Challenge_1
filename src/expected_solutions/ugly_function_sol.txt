@@ -1,0 +1,1 @@
+0.668062 -0.519456 #This is the optimal solution, but the function has infinite local minima
