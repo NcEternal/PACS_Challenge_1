@@ -18,40 +18,6 @@ math::vector minimize(const utils::func& f, const utils::grad& df, const math::v
 	}
 }
 
-template <class Strategy>
-math::vector gradient_descent(const utils::func& f, const utils::grad& df, const math::vector& x0,
-	const double step, const double step_decay, const double step_tol, const double res_tol,
-	const unsigned max_iter, bool verbose) {
-
-	math::vector xk(x0), x_prev(x0), gradk(df(xk));
-	double alpha = 0.;
-	unsigned k = 0;
-	Strategy step_rule(step, step_decay, f, df);
-
-	for (; k < max_iter; ++k) {
-
-		alpha = step_rule(k, xk);	// find step
-		xk -= alpha * gradk;		// update xk
-		gradk = df(xk);				// get new gradient
-
-		if ((xk - x_prev).norm() < step_tol || std::abs(f(xk) - f(x_prev)) < res_tol)	// convergence check
-			break;
-
-		x_prev = xk;	// store value for future convergence check
-	}
-
-	if (verbose) {
-		std::cout << "\nIterations Needed: " << k << "\n";
-		if (k != max_iter) {
-			std::cout << "Step Residual: " << (xk - x_prev).norm() << "\n";
-			std::cout << "Function Residual: " << std::abs(f(xk) - f(x_prev)) << "\n";
-		}
-		std::cout << "Gradient Residual: " << gradk.norm() << "\n" << std::endl;
-	}
-
-	return xk;
-}
-
 math::vector Adam(const utils::func& f, const utils::grad& df, const math::vector& x0,
 	const double step, const double step_tol, const double res_tol,
 	const unsigned max_iter, bool verbose) {
