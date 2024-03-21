@@ -1,5 +1,4 @@
 #include "solver.hpp"
-#include <iostream>
 
 math::vector minimize(const utils::func& f, const utils::grad& df, const math::vector& x0,
 	const double step, const double step_decay, const double step_tol, const double res_tol,

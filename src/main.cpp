@@ -2,7 +2,6 @@
 #include "read_params.hpp"	// reading parameters form .pot file
 #include "solver.hpp"		// minimizing algorithms
 #include "parser.hpp"		// custom parser implementation 
-#include <iostream>			// input-output
 #include <iomanip>			// nicer final output
 
 

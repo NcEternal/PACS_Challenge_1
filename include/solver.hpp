@@ -2,6 +2,7 @@
 #define HH_SOLVER_HH
 
 #include "step_strategies.hpp"
+#include <iostream>		//std::cout for gradient descent
 
 /*Chooses minimizing algorithm and, in the case of Gradient Descent, the step update rule.
 
