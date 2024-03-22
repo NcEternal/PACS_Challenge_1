@@ -26,7 +26,7 @@ namespace cstmparser {
 		parser(const parser& p);			// Copy constructor
 		parser& operator=(const parser& p); // Assignment
 
-		inline std::size_t num_vars() const { return x.size(); }		// Get number of variables
+		inline std::size_t num_vars() const { return x.size(); }		 // Get number of variables
 		inline std::string get_expression() const { return expression; } // Get expression
 
 		double operator()(const math::vector& input) const; // Evaluating the parsed function
@@ -35,7 +35,7 @@ namespace cstmparser {
 	};
 
 	parser create_from_file(const std::string& filename);	// Helper function to build from file. 
-															// The file should contain the function in a single line at the start of the file
+															// The file should contain the function in a single line at its start
 
 }
 

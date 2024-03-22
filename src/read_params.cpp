@@ -32,7 +32,7 @@ params read_parameters(std::string const& filename, unsigned n_vars, bool verbos
     GetPot ifile(filename.c_str());
     params values;
     // Read parameters from getpot data base
-    values.x0 = math::vector(ifile("x0", "0 0"));
+    values.x0 = math::vector(ifile("x0", std::string("0 0")));
     values.step_tol = ifile("step_tol", defaults.step_tol);
     values.res_tol = ifile("res_tol", defaults.res_tol);
     values.step = ifile("step", defaults.step);

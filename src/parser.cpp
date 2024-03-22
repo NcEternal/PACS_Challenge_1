@@ -8,9 +8,9 @@ namespace cstmparser {
 		if (x.size() != variables.length())
 			x = math::vector(variables.length(), 0.);
 
-		std::size_t i = 0;	// counter
+		std::size_t i = 0;
 
-		for (char& c : variables) {
+		for (const char c : variables) {
 			pars.DefineVar(std::string(1, c), &x[i]);	// add variable to the parser
 			++i;
 		}
@@ -19,7 +19,7 @@ namespace cstmparser {
 
 	parser::parser(const std::string& expr) {
 
-		if (expr[0] != '$')		// '$' indicates a the following character is a variable and should be excluded from the real expression
+		if (expr[0] != '$')		// '$' indicates that the following character is a variable and should be excluded from the real expression
 			expression += expr[0];	
 
 		for (std::size_t i = 1; i < expr.length(); ++i) {
@@ -34,9 +34,9 @@ namespace cstmparser {
 
 		}
 
-		set_variables();
-
 		pars.SetExpr(expression);	// set parser expression
+
+		set_variables();
 
 	}
 
@@ -67,7 +67,7 @@ namespace cstmparser {
 	}
 
 	double parser::operator() (const math::vector& input) const {
-		x = input;	// copy input vector into the variable vector before evaluating
+		x = input;	// copy input vector into the variable vector before evaluating (requires x mutable)
 		return pars.Eval();
 	}
 

@@ -56,15 +56,15 @@ int main(int argc, char** argv) {
 
 #if __cplusplus < 201703L
 	// unpacking for standards before C++17 
-	const math::vector& x0 = p.x0; // starting point
-	const double& step_tol = p.step_tol;  // Tolerance on step length for stopping criterion
-	const double& grad_tol = p.grad_tol;  // Tolerance on gradient norm for stopping criterion
-	const double& step = p.step; // Step
-	const double& step_decay = p.step_decay; // Parameter for Armijio Rule / Exponential Decay of the step / Inverse Decay of the step
-	const unsigned& max_iter = p.max_iter; // Max number of iteration
-	const unsigned& algorithm = p.algorithm; // Algorithm for solution
-	const unsigned& strategy = p.strategy; // Strategy for step
-	const double& h = p.h; // Step for numerical approximation of gradient
+	const math::vector& x0 = p.x0;				// Starting point
+	const double& step_tol = p.step_tol;		// Tolerance on step length for stopping criterion
+	const double& grad_tol = p.grad_tol;		// Tolerance on gradient norm for stopping criterion
+	const double& step = p.step;				// Step
+	const double& step_decay = p.step_decay;	// Parameter for Armijio Rule / Exponential Decay of the step / Inverse Decay of the step
+	const unsigned& max_iter = p.max_iter;		// Max number of iteration
+	const unsigned& algorithm = p.algorithm;	// Algorithm for solution
+	const unsigned& strategy = p.strategy;		// Strategy for step
+	const double& h = p.h;						// Step for numerical approximation of gradient
 #else
 	// C++17 onwards unpacking. 
 	const auto& [x0, step_tol, grad_tol, step, step_decay, max_iter, algorithm, strategy, h] = p;

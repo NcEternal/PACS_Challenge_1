@@ -6,8 +6,8 @@
 
 filename	string containing the name of the file;
 n_vars		number of variables in the function to minimize;
-verbose		true to print the parameters;
-numerical	true to use numerical gradient;
+verbose		true = print the parameters;
+numerical	true = use numerical gradient;
 */
 params read_parameters(std::string const& filename, unsigned n_vars, bool verbose, bool numerical);
 
