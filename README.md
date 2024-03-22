@@ -10,7 +10,7 @@ Run from the command line `./minimize -h` to print a list of options.
 
 The functions already in the `src/functions/` folder ready to be used with the parser are:
 
-* `base_function.txt`: $xy + 4x^2 + y^2 + 3x$;
+* `base_function.txt`: $xy + 4x^4 + y^2 + 3x$;
 
 * `1_variable_function.txt`: $(x - 5)e^{x - 5}$;
 

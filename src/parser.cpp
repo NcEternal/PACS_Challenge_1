@@ -79,7 +79,7 @@ namespace cstmparser {
 			std::cerr << "\nERROR: Function file " << filename << " does not exist" << std::endl;
 			std::cerr << "Reverting to default function." << std::endl;
 			infile.close();
-			return parser("$x*$y + 4*$x^2 + $y^2 + 3*$x");
+			return parser("$x*$y + 4*$x^4 + $y^2 + 3*$x");
 		}
 
 		std::string line;
