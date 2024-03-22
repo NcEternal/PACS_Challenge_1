@@ -2,7 +2,7 @@
 x0='5. -5.'
 #Tolerance on step length
 step_tol=1e-6
-#Tolerance on gradient norm
+#Tolerance on function residual
 res_tol=1e-9
 #Step
 step=0.2
