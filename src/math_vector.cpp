@@ -2,32 +2,9 @@
 #include <cmath>
 
 namespace math {
-	std::size_t vector::size() const {
-		return v_data.size();
-	}
-
-	void vector::swap(math::vector& v) {
-		v_data.swap(v.v_data);
-	}
-
-	double vector::at(std::size_t i) const {
-		return v_data.at(i);
-	}
-
-	double& vector::at(std::size_t i) {
-		return v_data.at(i);
-	}
-
-	double vector::operator[](std::size_t i) const {
-		return v_data[i];
-	}
-
-	double& vector::operator[](std::size_t i) {
-		return v_data[i];
-	}
 
 	//Square of norm
-	double vector::square_norm() const {
+	double vector::norm_square() const {
 		double res = 0.;
 		for (const double& a : v_data)
 			res += a * a;
@@ -36,7 +13,7 @@ namespace math {
 
 	//Euclidian norm
 	double vector::norm() const {
-		return std::sqrt(square_norm());
+		return std::sqrt(norm_square());
 	}
 
 	//The result has the same size as the original vector. The one on the right gets treated as smaller or bigger (0-padded) if necessary
@@ -177,6 +154,7 @@ namespace math {
 		return res;
 	}
 
+	// Output vector to stream
 	std::ostream& operator<<(std::ostream& os, const vector& v) {
 		for (size_t i = 0; i < v.size(); ++i)
 			os << v[i] << " ";
